@@ -3,6 +3,14 @@
 
     // Set default page to 'user-info' if no page is selected
     $page = isset($_GET['page']) ? $_GET['page'] : 'user-info';
+
+    include 'auth_check.php';
+
+    // Ensure only admin can access
+    if ($_SESSION['role'] !== 'admin') {
+        header("Location: about.php"); // Redirect non-admins
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +39,9 @@
                 ?>
             </div>
         </section>
+        <a href="logout.php">
+            <button>Logout</button>
+        </a>
     </main>
 
     <?php include("../components/common/footer.php"); ?>
