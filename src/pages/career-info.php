@@ -14,8 +14,6 @@
 </head>
 <body>
     <main>
-        <?php include("../components/common/header.php"); ?>
-
         <h2>Career Opportunities</h2>
         <table border="1">  
             <tr>
@@ -40,8 +38,6 @@
             }
             ?>
         </table>
-
-        <?php include("../components/common/footer.php"); ?>
     </main>
 </body>
 </html>
