@@ -1,3 +1,3 @@
 <header>
-    <h2>This is the nav</h2>
+    <h2>this is the header</h2>
 </header>
