@@ -6,13 +6,12 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$message = ""; // To store success or error messages
+$message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST["username"]);
     $password = trim($_POST["password"]);
 
-    // Check if username already exists
     $stmt = $conn->prepare("SELECT id FROM users WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
@@ -20,17 +19,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->num_rows > 0) {
         $message = "Username already exists!";
-    } else {
-        // Hash password using bcrypt
+    } 
+    else {
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
-        // Insert user into database
         $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
         $stmt->bind_param("ss", $username, $hashedPassword);
 
         if ($stmt->execute()) {
             $message = "Registration successful! You can now <a href='login.php'>login</a>.";
-        } else {
+        } 
+        else {
             $message = "Error: " . $stmt->error;
         }
     }

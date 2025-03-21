@@ -1,7 +1,6 @@
 <?php
     include("../components/common/header.php");
 
-    // Set default page to 'user-info' if no page is selected
     $page = isset($_GET['page']) ? $_GET['page'] : 'user-info';
 ?>
 
