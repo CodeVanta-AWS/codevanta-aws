@@ -1,4 +1,6 @@
 <?php
+    include 'auth_check.php'; // Restricts access if not logged in
+
     include '../../database.php';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -28,9 +30,11 @@
                 <button type="submit">Submit</button>
             </form>
         </section>
+        <a href="logout.php">
+            <button>Logout</button>
+        </a>
     </main>
+
     <?php include("../components/common/footer.php"); ?>
 </body>
 </html>
-
-

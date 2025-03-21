@@ -1,4 +1,6 @@
 <?php
+    include 'auth_check.php'; // Restricts access if not logged in
+
     include '../../database.php';
 
     $sql = "SELECT * FROM careers";
@@ -25,6 +27,10 @@
                 </div>
             </a>
         <?php } ?>
+
+        <a href="logout.php">
+            <button>Logout</button>
+        </a>
 
         <?php include("../components/common/footer.php"); ?>
     </main>
