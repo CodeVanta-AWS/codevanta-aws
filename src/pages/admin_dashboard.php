@@ -31,6 +31,7 @@
                 <a href="admin_dashboard.php?page=career-info"><button>Careers</button></a>
                 <a href="admin_dashboard.php?page=audit_log-info"><button>Audit Log</button></a>
                 <a href="admin_dashboard.php?page=analytics-info"><button>Analytics</button></a>
+                <a href="admin_dashboard.php?page=inquiries-info"><button>Inquiries</button></a>
             </div>
 
             <div class="content">

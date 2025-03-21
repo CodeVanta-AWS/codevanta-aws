@@ -3,16 +3,15 @@
 	$db_user = "root";
 	$db_password = "";
 	$db_name = "codevanta";
-	$conn = "";
 
 	try {
-		$conn = mysqli_connect($db_server, $db_user, $db_password, $db_name);
+		$conn = new mysqli($db_server, $db_user, $db_password, $db_name);
 
-		if($conn) {
-			echo "You are connected!"; 
-		} 
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		}
+	} 
+	catch (Exception $e) {
+		die("Could not connect: " . $e->getMessage());
 	}
-    catch (mysqli_sql_exception) {
-        echo "Could not connect!";
-    }
 ?>
