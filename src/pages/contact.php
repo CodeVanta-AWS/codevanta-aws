@@ -1,6 +1,6 @@
 
 <main>
-    <?= include("../components/common/header.php")?>
+    <?php include("../components/common/header.php"); ?>
     <section>contact</section>
-    <?= include("../components/common/footer.php")?>
+    <?php include("../components/common/footer.php"); ?>
 </main>

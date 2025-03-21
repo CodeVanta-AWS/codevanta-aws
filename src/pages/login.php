@@ -86,17 +86,19 @@ function get_location($ip) {
         <title>Login</title>
     </head>
     <body>
-        <h2>Login</h2>
-        <?php if (!empty($message)) echo "<p>$message</p>"; ?>
-        <form method="POST">
-            <label>Username:</label>
-            <input type="text" name="username" required>
-            <br>
-            <label>Password:</label>
-            <input type="password" name="password" required>
-            <br>
-            <button type="submit">Login</button>
-        </form>
-        <p>Don't have an account? <a href="register.php">Sign up here</a></p>
+        <main>
+            <h2>Login</h2>
+            <?php if (!empty($message)) echo "<p>$message</p>"; ?>
+            <form method="POST">
+                <label>Username:</label>
+                <input type="text" name="username" required>
+                <br>
+                <label>Password:</label>
+                <input type="password" name="password" required>
+                <br>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="register.php">Sign up here</a></p>
+        </main>
     </body>
 </html>
