@@ -8,10 +8,82 @@
     $user_id = $_SESSION['user_id'];
 
     function log_action($conn, $user_id, $action) {
+        if (empty($user_id)) {
+            error_log("log_action: User ID is NULL or empty");
+            return;
+        }
+    
         $timestamp = date("Y-m-d H:i:s");
+        $ip_address = $_SERVER['REMOTE_ADDR'] ?? 'Unknown';
+        $user_agent = $_SERVER['HTTP_USER_AGENT'] ?? 'Unknown';
+    
+        $os = getOS($user_agent);
+        $browser = getBrowser($user_agent);
+        $processor_details = getProcessorDetails($user_agent);
+        $location = getLocationFromIP($ip_address);
+    
         $action = $conn->real_escape_string($action);
-        $sql = "INSERT INTO audit_logs (user_id, action, timestamp) VALUES ('$user_id', '$action', '$timestamp')";
-        $conn->query($sql);
+        $ip_address = $conn->real_escape_string($ip_address);
+        $user_agent = $conn->real_escape_string($user_agent);
+        $os = $conn->real_escape_string($os);
+        $browser = $conn->real_escape_string($browser);
+        $processor_details = $conn->real_escape_string($processor_details);
+        $location = $conn->real_escape_string($location);
+    
+        $sql = "INSERT INTO audit_logs (user_id, action, timestamp, ip_address, user_agent, os, browser, processor_details, location) 
+                VALUES ('$user_id', '$action', '$timestamp', '$ip_address', '$user_agent', '$os', '$browser', '$processor_details', '$location')";
+    
+        if (!$conn->query($sql)) {
+            error_log("log_action: Failed to insert log - " . $conn->error);
+        }
+    }
+
+    function getOS($user_agent) {
+        $os_array = [
+            '/windows nt 10/i'    => 'Windows 10',
+            '/windows nt 6.3/i'   => 'Windows 8.1',
+            '/windows nt 6.2/i'   => 'Windows 8',
+            '/windows nt 6.1/i'   => 'Windows 7',
+            '/macintosh|mac os x/i' => 'Mac OS X',
+            '/linux/i'            => 'Linux',
+            '/android/i'          => 'Android',
+            '/iphone/i'           => 'iPhone',
+            '/ipad/i'             => 'iPad',
+        ];
+        
+        foreach ($os_array as $regex => $value) {
+            if (preg_match($regex, $user_agent)) {
+                return $value;
+            }
+        }
+        return 'Unknown OS';
+    }
+
+    function getBrowser($user_agent) {
+        $browser_array = [
+            '/chrome/i'    => 'Chrome',
+            '/firefox/i'   => 'Firefox',
+            '/safari/i'    => 'Safari',
+            '/edge/i'      => 'Edge',
+            '/opera/i'     => 'Opera',
+            '/msie/i'      => 'Internet Explorer',
+        ];
+        
+        foreach ($browser_array as $regex => $value) {
+            if (preg_match($regex, $user_agent)) {
+                return $value;
+            }
+        }
+        return 'Unknown Browser';
+    }
+
+    function getProcessorDetails($user_agent) {
+        if (strpos($user_agent, 'AMD64') !== false) {
+            return 'AMD64';
+        } elseif (strpos($user_agent, 'x86_64') !== false || strpos($user_agent, 'Intel') !== false) {
+            return 'Intel 64-bit';
+        }
+        return 'Unknown Processor';
     }
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_career'])) {
@@ -22,6 +94,27 @@
         if ($conn->query($sql)) {
             log_action($conn, $user_id, "Added a career: $career_name");
         }
+    }
+
+    function getLocationFromIP($ip_address) {
+        $api_url = "https://ipinfo.io/{$ip_address}/json";
+    
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $api_url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_TIMEOUT, 5); // Timeout after 5 seconds
+    
+        $response = curl_exec($curl);
+        curl_close($curl);
+    
+        if ($response) {
+            $data = json_decode($response, true);
+            if (isset($data['city']) && isset($data['region']) && isset($data['country'])) {
+                return $data['city'] . ', ' . $data['region'] . ', ' . $data['country'];
+            }
+        }
+        
+        return 'Unknown Location';
     }
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['edit_career'])) {
