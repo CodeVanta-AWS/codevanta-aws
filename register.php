@@ -1,10 +1,5 @@
 <?php
-session_start();
-$conn = new mysqli("localhost", "root", "", "codevanta");
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include('./database.php');
 
 $message = "";
 

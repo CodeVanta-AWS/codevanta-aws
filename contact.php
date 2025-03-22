@@ -1,6 +1,5 @@
 <?php
-    include 'auth_check.php'; 
-
+    include './auth_check.php';	
     include './database.php';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -19,7 +18,7 @@
     <title>Contact</title>
 </head>
 <body>
-<?php include("../components/common/header.php"); ?>
+<?php include("./header.php"); ?>
     <main>
         <section>
             <h2>Contact Us</h2>
@@ -35,6 +34,6 @@
         </a>
     </main>
 
-    <?php include("../components/common/footer.php"); ?>
+    <?php include("./footer.php"); ?>
 </body>
 </html>

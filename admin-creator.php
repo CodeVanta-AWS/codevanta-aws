@@ -1,12 +1,7 @@
 <?php
-    $conn = new mysqli("localhost", "root", "", "codevanta");
-
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    $username = "banwagon";
-    $password = "password123";
+    include('./database.php');
+    $username = "codevanta";
+    $password = "codevanta2200";
     $role = "admin";
 
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
