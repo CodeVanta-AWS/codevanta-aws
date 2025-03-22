@@ -1,5 +1,5 @@
 <?php
-    include '../../database.php';
+    include './database.php';
 
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
@@ -166,7 +166,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Careers — Code Vanta</title>
-    <link rel="stylesheet" href="../assets/styles/career-info.css" />
+    <link rel="stylesheet" href="./src/assets/styles/career-info.css" />
 </head>
 <body>
     <main>

@@ -1,5 +1,5 @@
 <?php
-    include '../../database.php';
+    include './database.php';
 
     $sql = "SELECT * FROM audit_logs";
     $result = $conn->query($sql);

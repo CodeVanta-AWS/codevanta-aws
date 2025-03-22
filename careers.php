@@ -1,7 +1,7 @@
 <?php
     include 'auth_check.php'; 
 
-    include '../../database.php';
+    include './database.php';
 
     $sql = "SELECT * FROM careers";
     $result = $conn->query($sql);

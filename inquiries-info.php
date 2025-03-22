@@ -1,5 +1,5 @@
 <?php
-    include '../../database.php';
+    include './database.php';
 
     $sql = "SELECT * FROM inquiries";
     $result = $conn->query($sql);

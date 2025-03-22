@@ -1,5 +1,5 @@
 <?php
-    include '../../database.php';
+    include './database.php';
 
     $sql = "SELECT * FROM users";
     $result = $conn->query($sql);

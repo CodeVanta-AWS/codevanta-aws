@@ -1,5 +1,5 @@
 <?php
-    include '../../database.php';
+    include './database.php';
 
     $sql = "SELECT DISTINCT user_id, ip_address, user_agent, os, browser, location, processor_details FROM audit_logs";
     $result = $conn->query($sql);
