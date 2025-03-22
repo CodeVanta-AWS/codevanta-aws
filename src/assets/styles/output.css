@@ -8,6 +8,7 @@
       "Courier New", monospace;
     --color-red-500: oklch(0.637 0.237 25.331);
     --spacing: 0.25rem;
+    --text-base: 1rem;
     --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1773,31 +1774,46 @@
   }
 }
 :root {
-  --font-family-title: '', serif;
-  --font-family-body: '', sans-serif;
-  --text-base: clamp(1rem, 0.9rem + 0.07vw, 1.05rem);
-  --text-base--large: clamp(1rem, 0.7071rem + 0.5143vi, 1.2rem);
-  --text-heading-4: clamp(1rem, 1rem + 1.25vw, 1rem);
-  --text-heading-3: clamp(1.25rem, 1rem + 1.25vw, 2rem);
-  --text-heading-2: clamp(1.375rem, 1rem + 1.875vw, 2.5rem);
-  --text-heading-1: clamp(2rem, 1.5rem + 2.8vw, 4.5rem);
-  --text-heading-display: clamp(2.6518rem, 1.88rem + 2.59vi, 4.5rem);
+  --font-family-title: 'Neue Montreal Bold', sans-serif;
+  --font-family-body: 'Neue Montreal Regular', sans-serif;
+  --text-heading-1: clamp(2.5rem, 1.5rem + 3.5vw, 6rem);
+  --text-heading-2: clamp(2rem, 1.25rem + 2.5vw, 4rem);
+  --text-heading-3: clamp(1.75rem, 1.1rem + 1.5vw, 3rem);
+  --text-heading-4: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+  --text-base: clamp(0.8125rem, 0.9rem + 0.2vw, 1rem);
   --tw-text-opacity: 1;
-  --color-midnight: rgb(14 24 75 / var(--tw-text-opacity));
-  --color-royal: rgb(35 39 92 / var(--tw-text-opacity));
-  --color-royal-violet: rgb(62 62 119 / var(--tw-text-opacity));
-  --color-golden: rgb(201 154 86 / var(--tw-text-opacity));
-  --color-champagne: rgb(249 198 123 / var(--tw-text-opacity));
+  --color-orange: rgb(254 61 0 / var(--tw-text-opacity));
+  --color-gray: rgb(135 135 135 / var(--tw-text-opacity));
+  --color-dark-gray: rgb(33 33 33 / var(--tw-text-opacity));
   --color-white: rgb(255 255 255 / var(--tw-text-opacity));
-  --spacing-3xs: clamp(0.3125rem, 0.3125rem + 0vi, 0.3125rem);
-  --spacing-2xs: clamp(0.5625rem, 0.5446rem + 0.0893vi, 0.625rem);
-  --spacing-xs: clamp(0.875rem, 0.8571rem + 0.0893vi, 0.9375rem);
-  --spacing-sm: clamp(1.125rem, 1.0893rem + 0.1786vi, 1.25rem);
-  --spacing-md: clamp(1.6875rem, 1.6339rem + 0.2679vi, 1.875rem);
-  --spacing-lg: clamp(2.25rem, 2.1786rem + 0.3571vi, 2.5rem);
-  --spacing-xl: clamp(3.375rem, 3.2679rem + 0.5357vi, 3.75rem);
-  --spacing-2xl: clamp(4.5rem, 4.3571rem + 0.7143vi, 5rem);
-  --spacing-3xl: clamp(4.75rem, 5.2571rem + 1.2023vi, 5.25rem);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font-family-body);
+}
+p {
+  font-family: var(--font-family-body);
+  font-size: var(--text-base);
+}
+h1 {
+  font-family: var(--font-family-title);
+  font-size: var(--text-heading-1);
+}
+h2, h3, h4 {
+  font-family: var(--font-family-body);
+}
+h2 {
+  font-size: var(--text-heading-2);
+}
+h3 {
+  font-size: var(--text-heading-3);
+}
+h4 {
+  font-size: var(--text-heading-4);
 }
 @property --tw-translate-x {
   syntax: "*";
