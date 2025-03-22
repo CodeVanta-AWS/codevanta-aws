@@ -1,0 +1,34 @@
+:root {
+    /* FONT FAMILY */
+    --font-family-title: '', serif;  /* CHANGE THIS */
+    --font-family-body: '', sans-serif; /* CHANGE THIS */
+
+    /* FONT SIZES */
+    --text-base: clamp(1rem, 0.9rem + 0.07vw, 1.05rem);
+    --text-base--large: clamp(1rem, 0.7071rem + 0.5143vi, 1.2rem);
+    --text-heading-4: clamp(1rem, 1rem + 1.25vw, 1rem);
+    --text-heading-3: clamp(1.25rem, 1rem + 1.25vw, 2rem);
+    --text-heading-2: clamp(1.375rem, 1rem + 1.875vw, 2.5rem);
+    --text-heading-1: clamp(2rem, 1.5rem + 2.8vw, 4.5rem);
+    --text-heading-display: clamp(2.6518rem, 1.88rem + 2.59vi, 4.5rem);
+
+    /* COLORS */
+    --tw-text-opacity: 1;
+    --color-midnight: rgb(14 24 75 / var(--tw-text-opacity)); /* #0E184B */
+    --color-royal: rgb(35 39 92 / var(--tw-text-opacity)); /* #23275C */
+    --color-royal-violet: rgb(62 62 119 / var(--tw-text-opacity)); /* #3E3E77 */
+    --color-golden: rgb(201 154 86 / var(--tw-text-opacity)); /* #C99A56 */
+    --color-champagne: rgb(249 198 123 / var(--tw-text-opacity)); /* #F9C67B */
+    --color-white: rgb(255 255 255 / var(--tw-text-opacity)); /* #FFFFFF */
+
+    /* SPACINGS */
+    --spacing-3xs: clamp(0.3125rem, 0.3125rem + 0vi, 0.3125rem);
+    --spacing-2xs: clamp(0.5625rem, 0.5446rem + 0.0893vi, 0.625rem);
+    --spacing-xs: clamp(0.875rem, 0.8571rem + 0.0893vi, 0.9375rem);
+    --spacing-sm: clamp(1.125rem, 1.0893rem + 0.1786vi, 1.25rem);
+    --spacing-md: clamp(1.6875rem, 1.6339rem + 0.2679vi, 1.875rem);
+    --spacing-lg: clamp(2.25rem, 2.1786rem + 0.3571vi, 2.5rem);
+    --spacing-xl: clamp(3.375rem, 3.2679rem + 0.5357vi, 3.75rem);
+    --spacing-2xl: clamp(4.5rem, 4.3571rem + 0.7143vi, 5rem);
+    --spacing-3xl: clamp(4.75rem, 5.2571rem + 1.2023vi, 5.25rem);
+}

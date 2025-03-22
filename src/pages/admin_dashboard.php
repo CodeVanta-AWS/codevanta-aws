@@ -5,9 +5,8 @@
 
     include 'auth_check.php';
 
-    // Ensure only admin can access
     if ($_SESSION['role'] !== 'admin') {
-        header("Location: about.php"); // Redirect non-admins
+        header("Location: about.php");
         exit();
     }
 ?>
