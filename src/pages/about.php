@@ -1,5 +1,5 @@
 <?php
-    include 'auth_check.php'; // Restricts access if not logged in
+    include 'auth_check.php';
 ?>
 
 <main>
