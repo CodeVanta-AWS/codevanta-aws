@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
     /* FONT FAMILY */
     --font-family-title: '', serif;  /* CHANGE THIS */
