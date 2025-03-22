@@ -1,7 +1,7 @@
 <?php
     include 'auth_check.php'; 
 
-    include '../../database.php';
+    include './database.php';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = $conn->prepare("INSERT INTO inquiries (name, email, message) VALUES (?, ?, ?)");

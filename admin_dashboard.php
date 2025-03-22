@@ -1,5 +1,5 @@
 <?php
-    include("../components/common/header.php");
+    include("./header.php");
 
     $page = isset($_GET['page']) ? $_GET['page'] : 'user-info';
 
@@ -43,7 +43,7 @@
         </a>
     </main>
 
-    <?php include("../components/common/footer.php"); ?>
+    <?php include("./footer.php"); ?>
 
 </body>
 </html>
