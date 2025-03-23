@@ -165,7 +165,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Careers — Code Vanta</title>
+    <title>Career Info — CodeVanta</title>
+    <link rel="stylesheet" href="./src/assets/styles/global.css" />
     <link rel="stylesheet" href="./src/assets/styles/career-info.css" />
 </head>
 <body>
