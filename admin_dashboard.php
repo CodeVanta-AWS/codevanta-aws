@@ -1,4 +1,12 @@
 <?php
+    // FOR VPN VALIDATION
+    $user_ip = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
+
+    if (substr($user_ip, 0, 4) !== "100.") {
+        header("HTTP/1.1 403 Forbidden");
+        exit("Access Denied - This page is only accessible via the VPN.\nYour detected IP: " . $user_ip);
+    }
+    // END OF VPN VALIDATION CODE, DELETE IF NOT WORKING
 
     $page = isset($_GET['page']) ? $_GET['page'] : 'user-info';
 
