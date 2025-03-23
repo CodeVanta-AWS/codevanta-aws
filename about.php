@@ -2,6 +2,7 @@
     include './auth_check.php';
 ?>
 
+<<<<<<< HEAD
 <link rel="stylesheet" href="src/assets/styles/output.css">
 
 
@@ -15,6 +16,10 @@
         
     </div>
     
+=======
+<main>
+    <?php include("./header.php"); ?>
+>>>>>>> parent of eb13cfc (Import Tailwind)
     <section>about</section>
     <a href="logout.php">
         <button>Logout</button>
