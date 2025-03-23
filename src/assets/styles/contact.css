@@ -1,0 +1,6 @@
+@media (min-width: 640px){
+    .contact-container {
+        display: flex;
+        gap: 2rem;
+    }
+}

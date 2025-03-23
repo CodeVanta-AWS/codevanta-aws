@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./src/assets/styles/global.css" />
 </head>
 <body> 
+
     <?php include("./header.php"); ?>
 
     <main>
@@ -32,7 +33,6 @@
         <a href="logout.php">
             <button>Logout</button>
         </a>
-
     </main>
 
     <?php include("./footer.php"); ?>
