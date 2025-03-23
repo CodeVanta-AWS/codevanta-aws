@@ -16,7 +16,7 @@
 </head>
 <body> 
     <main>
-        <?php include("../components/common/header.php"); ?>
+        <?php include("./header.php"); ?>
 
         <?php 
             while ($row = $result->fetch_assoc()) { ?>
@@ -32,7 +32,7 @@
             <button>Logout</button>
         </a>
 
-        <?php include("../components/common/footer.php"); ?>
+        <?php include("./footer.php"); ?>
     </main>
 </body>
 </html>
