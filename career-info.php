@@ -231,6 +231,7 @@
             <button type="button" onclick="closeDeleteModal()">Cancel</button>
         </form>
     </div>
-    <script src="../assets/scripts/career-info.js"></script>
+    
+    <script src="../codevanta-aws/src/assets/scripts/career-info.js"></script>
 </body>
 </html>
