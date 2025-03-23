@@ -159,6 +159,8 @@
     $sql = "SELECT * FROM careers";
 
     $result = $conn->query($sql);
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -173,7 +175,8 @@
 <body>
     <main>
         <h2>Career Opportunities</h2>
-                <button onclick="document.getElementById('addModal').style.display='block'" class="button-admin mm-t">Add Career</button>
+        <button onclick="document.getElementById('addModal').style.display='block'" class="button-admin mm-t">Add Career</button>
+            
 
         <table border="1">  
             <tr>
@@ -233,5 +236,6 @@
         </form>
     </div>
     <script src="../codevanta-aws/src/assets/scripts/career-info.js"></script>
+    
 </body>
 </html>
