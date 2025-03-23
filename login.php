@@ -7,7 +7,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST["username"]);
     $password = trim($_POST["password"]);
 
-    // Fetch user details
     $stmt = $conn->prepare("SELECT id, password, role FROM users WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
@@ -16,12 +15,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->fetch();
 
     if ($stmt->num_rows > 0) {
-        // Verify password
         if (password_verify($password, $hashedPassword)) {
             $_SESSION['user_id'] = $userId;
             $_SESSION['role'] = $role;
 
-            // Collect user system information
             $ipAddress = $_SERVER['REMOTE_ADDR'];  
             $userAgent = $_SERVER['HTTP_USER_AGENT'];
             $os = php_uname('s') . ' ' . php_uname('r');  
@@ -29,23 +26,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $location = get_location($ipAddress);  
             $processorDetails = php_uname('m'); 
 
-            // Log the login event
             $logStmt = $conn->prepare("INSERT INTO audit_logs (user_id, action, ip_address, user_agent, os, browser, location, processor_details) VALUES (?, 'User Logged In', ?, ?, ?, ?, ?, ?)");
             $logStmt->bind_param("issssss", $userId, $ipAddress, $userAgent, $os, $browser, $location, $processorDetails);
             $logStmt->execute();
             $logStmt->close();
 
-            // Redirect based on role
             if ($role === "admin") {
                 header("Location: admin_dashboard.php");
-            } else {
+            } 
+            else {
                 header("Location: about.php");
             }
             exit();
-        } else {
+        } 
+        else {
             $message = "Invalid username or password!";
         }
-    } else {
+    } 
+    else {
         $message = "User not found!";
     }
 
@@ -54,7 +52,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 
-// Function to extract browser name
 function get_browser_name($userAgent) {
     if (strpos($userAgent, 'Firefox') !== false) return 'Firefox';
     if (strpos($userAgent, 'Chrome') !== false) return 'Chrome';
@@ -64,7 +61,6 @@ function get_browser_name($userAgent) {
     return 'Unknown';
 }
 
-// Function to get user location (Requires external API like ip-api.com)
 function get_location($ip) {
     $apiURL = "http://ip-api.com/json/" . $ip;
     $response = file_get_contents($apiURL);
