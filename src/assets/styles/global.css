@@ -72,21 +72,23 @@
   --text-heading-3: clamp(1.75rem, 1.1rem + 1.5vw, 3rem);    /* 28px – 48px */
   --text-heading-4: clamp(1.25rem, 1rem + 1vw, 1.75rem);     /* 20px – 28px */
   --text-base: clamp(0.8125rem, 0.9rem + 0.2vw, 1rem);       /* 13px – 16px */
+  --text-base--large: clamp(1rem, 0.7071rem + 0.5143vi, 1.2rem);
 
-      /* FONT SIZES */
+  /* FONT SIZES */
   --lineheight-heading-1: clamp(2.5rem, 1.5rem + 3.5vw, 6rem);     /* 40px – 96px */
   --lineheight-heading-2: clamp(2rem, 1.25rem + 2.5vw, 4rem);      /* 32px – 64px */
   --lineheight-heading-3: clamp(1.75rem, 1.1rem + 1.5vw, 3rem);    /* 28px – 48px */
   --lineheight-heading-4: clamp(1.25rem, 1rem + 1vw, 1.75rem);     /* 20px – 28px */
-  --lineheight-text-base: clamp(0.8125rem, 0.9rem + 0.2vw, 1rem);       /* 13px – 16px */
+  --lineheight-text-base: clamp(0.8125rem, 0.9rem + 0.2vw, 1rem);  /* 13px – 16px */
 
   /* COLORS */
   --tw-text-opacity: 1;
   --color-orange: rgb(254 61 0 / var(--tw-text-opacity));
   --color-yellow: rgb(255 155 0 / var(--tw-text-opacity));
-  --color-gray: rgb(135 135 135 / var(--tw-text-opacity));
+  --color-white: rgb(223 223 223 / var(--tw-text-opacity));
+  --color-gray: rgb(93 95 94 / var(--tw-text-opacity));
+  --color-light-gray: rgb(197 196 193 / var(--tw-text-opacity));
   --color-dark-gray: rgb(33 33 33 / var(--tw-text-opacity));
-  --color-white: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 * {
@@ -107,35 +109,46 @@ body {
 p {
   font-family: var(--font-family-body);
   font-size: var(--text-base);
-  font-weight: 200;
+  /* font-weight: 200; */
   color: var(--color-white);
+  line-height: 135%;
 }
 
 h1 {
   font-family: var(--font-family-title);
   font-size: var(--text-heading-1);
-  line-height: 40px;
+  /* line-height: 40px; */
+  line-height: 0.95em;
 }
 
 h2, h4 {
   font-family: var(--font-family-body);
   font-weight: 400;
+  
 }
 
 h2 {
   font-size: var(--text-heading-2);
-  line-height: 30px;
   color: var(--color-white);
+  line-height: 0.95em;
 }
 
 h3 {
   font-size: var(--text-heading-3);
   color: var(--color-white);
+  line-height: normal;
 }
 
 h4 {
   font-size: var(--text-heading-4);
   color: var(--color-white);
+  line-height: 1.1;
+}
+
+@media screen and (min-width: 1567px) {
+  p {
+      font-size: var(--text-base--large);
+  }
 }
 
 
@@ -413,7 +426,7 @@ textarea:focus {
 
 @media (min-width: 640px){
   h1 {
-    line-height: 50px;
+    /* line-height: 50px; */
   }
 
   .hero {
@@ -425,7 +438,7 @@ textarea:focus {
   }
 
   h2 {
-    line-height: 35px;
+    /* line-height: 35px; */
   }
 
   .image {
@@ -465,11 +478,11 @@ textarea:focus {
   }
 
   h1 {
-    line-height: 60px;
+    /* line-height: 60px; */
   }
 
   h2 {
-    line-height: 45px;
+    /* line-height: 45px; */
   }
 
   .hero {
