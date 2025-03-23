@@ -19,7 +19,7 @@ if (isset($_SESSION['user_id'])) {
 
 session_unset();
 session_destroy();
-header("Location: http://codevanta-test.s3-website-ap-southeast-1.amazonaws.com/");
+header("Location: http://codevanta-landing.s3-website-ap-southeast-1.amazonaws.com/");
 exit();
 
 function get_browser_name($userAgent) {
