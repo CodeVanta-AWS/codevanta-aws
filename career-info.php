@@ -171,9 +171,9 @@
 </head>
 <body>
     <main>
-        <button onclick="document.getElementById('addModal').style.display='block'">Add Career</button>
-
         <h2>Career Opportunities</h2>
+                <button onclick="document.getElementById('addModal').style.display='block'" class="button-admin mm-t">Add Career</button>
+
         <table border="1">  
             <tr>
                 <th>ID</th>
@@ -191,8 +191,8 @@
                     echo "<td>" . $row['description'] . "</td>";
                     echo "<td>" . $row['created_at'] . "</td>";
                     echo "<td>";
-                    echo "<button onclick=\"openModal('" . $row['id'] . "', '" . $row['career_name'] . "', '" . $row['description'] . "')\">Edit</button>";
-                    echo "<button onclick=\"openDeleteModal('" . $row['id'] . "')\">Delete</button>";
+                    echo "<button class='button-admin' onclick=\"openModal('" . $row['id'] . "', '" . $row['career_name'] . "', '" . $row['description'] . "')\">Edit</button>";
+                    echo "<button class='button-admin' onclick=\"openDeleteModal('" . $row['id'] . "')\">Delete</button>";
                     echo "</td>";
                     echo "</tr>";
                 }
@@ -207,8 +207,8 @@
         <form method="POST">
             <input type="text" name="career_name" placeholder="Career Name" required>
             <textarea name="description" placeholder="Description" required></textarea>
-            <button type="submit" name="add_career">Add Career</button>
-            <button type="button" onclick="document.getElementById('addModal').style.display='none'">Close</button>
+            <button type="submit" name="add_career" class='button-admin'>Add Career</button>
+            <button type="button" onclick="document.getElementById('addModal').style.display='none'" class='button-admin'>Close</button>
         </form>
     </div>
 
@@ -217,20 +217,20 @@
             <input type="hidden" id="edit_id" name="id">
             <input type="text" id="edit_name" name="career_name" required>
             <textarea id="edit_description" name="description" required></textarea>
-            <button type="submit" name="edit_career">Save Changes</button>
-            <button type="button" onclick="closeModal()">Close</button>
+            <button type="submit" name="edit_career" class='button-admin'>Save Changes</button>
+            <button type="button" onclick="closeModal()" class='button-admin'>Close</button>
         </form>
     </div>
 
     <div id="deleteModal" class="modal">
-        <p>Are you sure you want to delete this career?</p>
+        <p class="ms-b">Are you sure you want to delete this career?</p>
         <form id="deleteForm" method="POST">
             <input type="hidden" id="delete_id" name="id">
             <input type="hidden" name="delete_career" value="1">
-            <button type="submit">Yes, Delete</button>
-            <button type="button" onclick="closeDeleteModal()">Cancel</button>
+            <button type="submit" class="button-admin">Yes, Delete</button>
+            <button type="button" onclick="closeDeleteModal()" class="button-admin">Cancel</button>
         </form>
     </div>
-    <script src="../assets/scripts/career-info.js"></script>
+    <script src="src/assets/scripts/career-info.js"></script>
 </body>
 </html>

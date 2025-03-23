@@ -22,6 +22,7 @@
 </head>
 <body>
     <?php include("./header.php"); ?> 
+    
     <main>
         <section class="hero hero-contact">
             <div>
@@ -54,16 +55,13 @@
                         </form>
                     </div>
                 </section>
-
-                <a href="logout.php">
-                    <button>Logout</button>
-                </a>
+                <div class="footer-btm-2 ms-t pb-s">
+                    <p>Think it. Code it. Vanta it.</p>
+                    <p>CodeVanta 2025. All Rights Reserved</p>
+                </div>
             </div>
-            
         </div>
-        
     </main>
 
-    <?php include("./footer.php"); ?>
 </body>
 </html>

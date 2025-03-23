@@ -170,7 +170,7 @@ hr {
 }
 
 
-.hero-login-right {
+.hero-login-right, .hero-register-right {
   align-items: start;
 }
 
@@ -181,13 +181,13 @@ hr {
 }
 
 
-.hero-login {
+.hero-login, .hero-register {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.hero-login div {
+.hero-login div, .hero-register div {
   position: relative;
   margin-right: 0;
   bottom: 0;
@@ -225,6 +225,100 @@ hr {
   background-position: center;
 }
 
+.hero-register {
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url('../images/register/register-hero.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hero-careers {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('../images/careers/career-hero.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+
+
+header {
+  display: flex;
+  color: white;
+  background-color: transparent;
+  position: fixed;
+  align-items: center;
+  justify-content: end;
+  left: 0;
+  right: 0;
+  padding: 3rem 3rem;
+  z-index: 1;
+}
+
+header a {
+  color: white;
+}
+
+.nav1 {
+  display: none;
+}
+
+.nav1 ul {
+  display: flex;
+  gap: 1rem;
+}
+
+.menu {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -300px; /* hidden by default */
+  height: 100%;
+  width: 300px;
+  background-color: #111;
+  color: white;
+  padding: 2rem;
+  transition: right 0.3s ease-in-out;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.side-menu ul li {
+  margin-bottom: 1rem;
+}
+
+.side-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.side-menu .close-btn {
+  font-size: 2rem;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.side-menu.active {
+  right: 0;
+}
+
+
 
 
 
@@ -261,12 +355,19 @@ hr {
   margin-top: 4rem;
 }
 
+.pb-s {
+  padding-bottom: 1rem;
+}
+
 
 .nr {
   object-fit: cover;
   object-position: center;
 }
 
+.bold {
+  font-weight: bold;
+}
 .small-header {
   color: var(--color-gray);
   font-size: 1rem;
@@ -277,7 +378,7 @@ span {
   margin-right: 1rem;
 }
 
-.about-section, .about-position, .about-last, .contact-about {
+.about-section, .about-position, .about-last, .contact-about, .career-section {
   padding: 4rem 1rem;
 }
 
@@ -294,6 +395,12 @@ span {
   background: none;
   border-radius: 15px;
   font-size: large;
+  transition: 0.5s;
+}
+
+.button-orange-outline:hover {
+  color: var(--color-white);
+  background: var(--color-orange);
 }
 
 .button-white-outline {
@@ -303,7 +410,27 @@ span {
   text-transform: uppercase;
   font-weight: bold;
   background: none;
+  transition: 0.5s;
 }
+
+.button-white-outline:hover {
+  color: var(--color-dark-gray);
+  background: white;
+}
+
+.button-admin {
+  color: var(--color-white);
+  border: solid 2px var(--color-white);
+  padding: 0.5rem 2rem;
+  background: none;
+  transition: 0.5s;
+}
+
+.button-admin:hover {
+  color: var(--color-dark-gray);
+  background: white;
+}
+
 
 .col-span-2 {
   grid-column: span 2;
@@ -420,9 +547,13 @@ textarea:focus {
     padding: 2rem;
   }
 
-  .about-section, .about-position, .about-last, .contact-about, .contact-container, .hero-contact {
+  .about-section, .about-position, .about-last, .contact-about, .contact-container, .hero-contact, .career-container {
     padding: 4rem 2rem;
   }
+
+  .admin-section {
+    padding: 2rem;
+}
 
   h2 {
     line-height: 35px;
@@ -442,6 +573,14 @@ textarea:focus {
 
   .md-nm {
     margin: 0;
+  }
+
+  header {
+    justify-content: space-between;
+  }
+  
+  .nav1 {
+    display: block;
   }
 
   .footer-top {
@@ -497,6 +636,10 @@ textarea:focus {
   .container {
     max-width: 1400px;
     margin: 0 auto;
+  }
+
+  .hero-login-right, .hero-register-right {
+    align-items: center;
   }
 
 

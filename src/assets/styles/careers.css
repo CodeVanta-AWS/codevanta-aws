@@ -1,0 +1,25 @@
+
+
+.career-container {
+    display: grid;
+    gap: 2rem;
+}
+
+.career-container div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media (min-width: 640px){
+    .career-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1400px){
+    .career-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+}
