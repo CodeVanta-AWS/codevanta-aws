@@ -157,19 +157,9 @@
     }
 
     $sql = "SELECT * FROM careers";
-
-    //search and filter
-    // $search = $_GET['search'] ?? '';
-
-    // if (!empty($search)) {
-    //     $search = $conn->real_escape_string($search);
-    //     $sql = "SELECT * FROM careers WHERE career_name LIKE '%$search%' OR description LIKE '%$search%'";
-    // } 
-    // else {
-    //     $sql = "SELECT * FROM careers";
-    // }
-
     $result = $conn->query($sql);
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -184,14 +174,6 @@
 <body>
     <main>
         <button onclick="document.getElementById('addModal').style.display='block'">Add Career</button>
-        <input type="text" placeholder="Search data">
-        <select name="filterdata" id="">
-            <option value=""></option>
-            <option value="id">ID</option>
-            <option value="career_name">Career Name</option>
-            <option value="description">Description</option>
-            <option value="created_at">Created at</option>
-        </select>
 
         <h2>Career Opportunities</h2>
         <table border="1">  
@@ -252,5 +234,6 @@
         </form>
     </div>
     <script src="../codevanta-aws/src/assets/scripts/career-info.js"></script>
+    
 </body>
 </html>
