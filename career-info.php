@@ -175,7 +175,8 @@
 <body>
     <main>
         <h2>Career Opportunities</h2>
-                <button onclick="document.getElementById('addModal').style.display='block'" class="button-admin mm-t">Add Career</button>
+        <button onclick="document.getElementById('addModal').style.display='block'" class="button-admin mm-t">Add Career</button>
+            
 
         <table border="1">  
             <tr>

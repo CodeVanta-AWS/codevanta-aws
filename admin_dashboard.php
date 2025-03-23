@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="./src/assets/styles/dashboard.css" />
 </head>
 <body>
-
-    <main>
+    <?php include("./header.php"); ?> 
+    <main class="dashboard__container">
         <section class="admin-section">
             <div class="admin-header">
                 <h3 class="white">WELCOME BACK, <span>ADMIN!</span></h3>
@@ -34,7 +34,7 @@
                 <a href="admin_dashboard.php?page=user-info"><button class="button-admin">Users</button></a>
                 <a href="admin_dashboard.php?page=career-info"><button class="button-admin">Careers</button></a>
                 <a href="admin_dashboard.php?page=audit_log-info"><button class="button-admin">Audit Log</button></a>
-                <a href="admin_dashboard.php?page=analytics-info"><button class="button-admin">Analytics</button></a>
+                <a href="analytics-info.php"><button class="button-admin">Analytics</button></a>
                 <a href="admin_dashboard.php?page=inquiries-info"><button class="button-admin">Inquiries</button></a>
             </div>
 
