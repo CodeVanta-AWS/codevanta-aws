@@ -1,8 +1,8 @@
 <?php
     include("./database.php");
 
-    $username = "chesjt222";
-    $password = "adminches_codevanta";
+    $username = "luis";
+    $password = "luis123";
     $role = "admin";
 
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
