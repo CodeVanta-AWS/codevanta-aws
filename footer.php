@@ -1,3 +1,4 @@
+
 <footer class="footer container">
     <div class="footer-top">
         <h3 class="w-80">We’d love to hear from you. Connect with CodeVanta and let’s build something great together. <span>Your next big idea starts here.</span></h3>

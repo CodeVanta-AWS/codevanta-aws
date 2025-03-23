@@ -1,7 +1,7 @@
 <?php
-	$db_server = "localhost";
-	$db_user = "root";
-	$db_password = "";
+	$db_server = "codevanta-db.c9yie6y44znf.ap-southeast-1.rds.amazonaws.com";
+	$db_user = "codevanta_admin";
+	$db_password = "codevanta2200";
 	$db_name = "codevanta";
 
 	try {

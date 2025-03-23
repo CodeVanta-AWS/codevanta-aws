@@ -12,12 +12,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Careers — Code Vanta</title>
+    <title>Careers — CodeVanta</title>
+    <link rel="stylesheet" href="./src/assets/styles/global.css" />
 </head>
 <body> 
-    <main>
-        <?php include("./header.php"); ?>
 
+    <?php include("./header.php"); ?>
+
+    <main>
         <?php 
             while ($row = $result->fetch_assoc()) { ?>
             <a href="#">
@@ -31,8 +33,8 @@
         <a href="logout.php">
             <button>Logout</button>
         </a>
-
-        <?php include("./footer.php"); ?>
     </main>
+
+    <?php include("./footer.php"); ?>
 </body>
 </html>

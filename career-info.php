@@ -165,7 +165,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Careers — Code Vanta</title>
+    <title>Career Info — CodeVanta</title>
+    <link rel="stylesheet" href="./src/assets/styles/global.css" />
     <link rel="stylesheet" href="./src/assets/styles/career-info.css" />
 </head>
 <body>
@@ -202,7 +203,6 @@
         </table>
     </main>
 
-    <!-- Add Career Modal -->
     <div id="addModal" class="modal">
         <form method="POST">
             <input type="text" name="career_name" placeholder="Career Name" required>
@@ -212,7 +212,6 @@
         </form>
     </div>
 
-    <!-- Edit Career Modal -->
     <div id="modal" class="modal">
         <form method="POST">
             <input type="hidden" id="edit_id" name="id">
@@ -223,7 +222,6 @@
         </form>
     </div>
 
-    <!-- Delete Career Modal -->
     <div id="deleteModal" class="modal">
         <p>Are you sure you want to delete this career?</p>
         <form id="deleteForm" method="POST">

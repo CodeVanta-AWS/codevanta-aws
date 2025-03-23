@@ -2,7 +2,6 @@
 session_start();
 include("./database.php");
 
-// Check if the user is logged in
 if (isset($_SESSION['user_id'])) {
     $userId = $_SESSION['user_id'];
     $ipAddress = $_SERVER['REMOTE_ADDR'];  
@@ -12,20 +11,17 @@ if (isset($_SESSION['user_id'])) {
     $location = get_location($ipAddress);  
     $processorDetails = php_uname('m'); 
 
-    // Log the logout event
     $logStmt = $conn->prepare("INSERT INTO audit_logs (user_id, action, ip_address, user_agent, os, browser, location, processor_details) VALUES (?, 'User Logged Out', ?, ?, ?, ?, ?, ?)");
     $logStmt->bind_param("issssss", $userId, $ipAddress, $userAgent, $os, $browser, $location, $processorDetails);
     $logStmt->execute();
     $logStmt->close();
 }
 
-// Destroy session and redirect to login page
 session_unset();
 session_destroy();
-header("Location: login.php");
+header("Location: http://codevanta-landing.s3-website-ap-southeast-1.amazonaws.com/");
 exit();
 
-// Function to extract browser name
 function get_browser_name($userAgent) {
     if (strpos($userAgent, 'Firefox') !== false) return 'Firefox';
     if (strpos($userAgent, 'Chrome') !== false) return 'Chrome';
@@ -35,7 +31,6 @@ function get_browser_name($userAgent) {
     return 'Unknown';
 }
 
-// Function to get user location (Requires external API like ip-api.com)
 function get_location($ip) {
     $apiURL = "http://ip-api.com/json/" . $ip;
     $response = file_get_contents($apiURL);

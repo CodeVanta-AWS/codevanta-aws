@@ -1,6 +1,5 @@
 <?php
-    include 'auth_check.php'; 
-
+    include './auth_check.php';	
     include './database.php';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -16,7 +15,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Contact — CodeVanta</title>
     <link rel="stylesheet" href="src/assets/styles/global.css">
     <link rel="stylesheet" href="src/assets/styles/contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
