@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-        $message = "Username already exists!";
+        $message = "<span>Username already exists!</span>";
     } 
     else {
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("ss", $username, $hashedPassword);
 
         if ($stmt->execute()) {
-            $message = "Registration successful! You can now <a href='login.php'>login</a>.";
+            $message = "<span>Registration successful! You can now <a href='login.php' class='orange'>login</a>.</span>";
         } 
         else {
             $message = "Error: " . $stmt->error;
@@ -45,19 +45,28 @@ $conn->close();
         <link rel="stylesheet" href="./src/assets/styles/global.css" />
     </head>
     <body>
-        <main>
-            <h2>Register</h2>
-            <?php if (!empty($message)) echo "<p>$message</p>"; ?>
-            <form method="POST">
-                <label>Username:</label>
-                <input type="text" name="username" required>
-                <br>
-                <label>Password:</label>
-                <input type="password" name="password" required>
-                <br>
-                <button type="submit">Register</button>
-            </form>
-            <p>Already have an account? <a href="login.php">Login here</a></p>
-        </main>
+
+        <section class="hero hero-register">
+            <div class="hero-contact-left">
+                <h1 class="ms-b lg-80">Step Into CodeVanta.<br>One Click Away</h1>
+                <hr class="w-50">
+                <p class="ms-t md-50">Creating an account is your first step toward building with purpose. Collaborate, grow, and explore endless tech possibilities.</p>
+            </div>
+            <div class="hero-register-right w-50 mxl-t">
+                <?php if (!empty($message)) echo "<p>$message</p>"; ?>
+                <form method="POST">
+                    <label>Username:</label>
+                    <input type="text" name="username" required>
+                    <br>
+                    <label>Password:</label>
+                    <input type="password" name="password" required>
+                    <br>
+                    <button type="submit" class="button-orange-outline l-w-50">Register</button>
+                </form>
+                <p class="ms-t">Already have an account? <a href="login.php" class="white">Login here</a></p>
+            </div>
+        </section>
+        
+         
     </body>
 </html>
