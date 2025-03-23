@@ -73,10 +73,10 @@
   --text-heading-4: clamp(1.25rem, 1rem + 1vw, 1.75rem);     /* 20px – 28px */
   --text-base: clamp(0.8125rem, 0.9rem + 0.2vw, 1rem);       /* 13px – 16px */
 
-
   /* COLORS */
   --tw-text-opacity: 1;
   --color-orange: rgb(254 61 0 / var(--tw-text-opacity));
+  --color-yellow: rgb(255 155 0 / var(--tw-text-opacity));
   --color-gray: rgb(135 135 135 / var(--tw-text-opacity));
   --color-dark-gray: rgb(33 33 33 / var(--tw-text-opacity));
   --color-white: rgb(255 255 255 / var(--tw-text-opacity));
@@ -90,7 +90,7 @@
 
 body {
   font-family: var(--font-family-body);
-  background-color: #f3f3f1;
+  background-color: rgb(39 39 39);
 }
 
 
