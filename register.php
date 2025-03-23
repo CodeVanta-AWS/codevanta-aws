@@ -1,5 +1,6 @@
 <?php
-include('./database.php');
+session_start();
+include("./database.php");
 
 $message = "";
 

@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("./database.php");
-$message = ""; // To store login errors
+$message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST["username"]);
