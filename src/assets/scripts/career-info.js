@@ -14,3 +14,20 @@ function openDeleteModal(id) {
 function closeDeleteModal() {
     document.getElementById('deleteModal').style.display = 'none';
 }
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     const searchInput = document.querySelector("input[placeholder='Search data']");
+
+//     searchInput.addEventListener("input", function () {
+//         const searchValue = searchInput.value.trim();
+
+//         fetch(`career-info.php?search=${encodeURIComponent(searchValue)}`)
+//             .then(response => response.text())
+//             .then(html => {
+//                 const parser = new DOMParser();
+//                 const doc = parser.parseFromString(html, "text/html");
+//                 document.querySelector("table").innerHTML = doc.querySelector("table").innerHTML;
+//             })
+//             .catch(error => console.error("Error fetching search results:", error));
+//     });
+// });
