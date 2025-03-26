@@ -18,7 +18,7 @@
     // If IP is not in the allowed range, deny access
     if (!ip_in_range($admin_ip, $allowed_subnet, $subnet_mask)) {
         http_response_code(403);
-        die("Access denied: You must be connected to the VPN.");
+        die("Access denied: You must be connected to the VPN. Your IP: " . $admin_ip);
     }
     // END OF VPN VALIDATION CODE, DELETE IF NOT WORKING
 
