@@ -1,26 +1,18 @@
 <?php
     // FOR VPN VALIDATION
-    // Get the user's IP address
-    $admin_ip = $_SERVER['REMOTE_ADDR'];
-
-    // Define the allowed IP range (Example: 10.8.0.0 - 10.8.0.255)
-    $allowed_subnet = '10.8.0.0';
-    $subnet_mask = 24; // Adjust this based on your VPN subnet
-
-    // Function to check if IP is within the subnet
-    function ip_in_range($ip, $subnet, $mask) {
-        $ip_dec = ip2long($ip);
-        $subnet_dec = ip2long($subnet);
-        $mask_dec = -1 << (32 - $mask);
-        return ($ip_dec & $mask_dec) === ($subnet_dec & $mask_dec);
+    function isValidAdminIP($ip, $allowedOctets) {
+        $firstOctet = explode('.', $ip)[0]; // Get the first octet of user's IP
+        return in_array($firstOctet, $allowedOctets);
     }
-
-    // If IP is not in the allowed range, deny access
-    if (!ip_in_range($admin_ip, $allowed_subnet, $subnet_mask)) {
+    
+    $adminIP = $_SERVER['REMOTE_ADDR']; // Get the user's IP
+    $allowedOctets = [51, 94];
+    
+    if (isValidAdminIP($adminIP, $allowedOctets) == false) {
         http_response_code(403);
         die("Access denied: You must be connected to the VPN. Your IP: " . $admin_ip);
     }
-    // END OF VPN VALIDATION CODE, DELETE IF NOT WORKING
+    // END OF VPN VALIDATION CODE
 
     $page = isset($_GET['page']) ? $_GET['page'] : 'user-info';
 
