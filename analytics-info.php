@@ -46,8 +46,22 @@
     <link rel="stylesheet" href="./src/assets/styles/analytics-info.css" />
 </head>
 <body>
-    <?php include("./header.php"); ?> 
     <main class="analytics__container">
+        <div class="admin-header">
+            <h3 class="white">WELCOME BACK, <span>ADMIN!</span></h3>
+                    <a href="logout.php">
+                <button class="button button-orange-outline">Logout</button>
+            </a>
+        </div>
+        
+        <div class="button-container ml-b">
+            <a href="admin_dashboard.php?page=user-info"><button class="button-admin">Users</button></a>
+            <a href="admin_dashboard.php?page=career-info"><button class="button-admin">Careers</button></a>
+            <a href="admin_dashboard.php?page=audit_log-info"><button class="button-admin">Audit Log</button></a>
+            <a href="analytics-info.php"><button class="button-admin">Analytics</button></a>
+            <a href="admin_dashboard.php?page=inquiries-info"><button class="button-admin">Inquiries</button></a>
+        </div>
+        
         <section>
             <h2>Analytics Info</h2>
             
