@@ -10,7 +10,7 @@
     
     if (isValidAdminIP($adminIP, $allowedOctets) == false) {
         http_response_code(403);
-        die("Access denied: You must be connected to the VPN. Your IP: " . $admin_ip);
+        die("Access denied: You must be connected to the VPN. Your IP: " . $adminIP);
     }
     // END OF VPN VALIDATION CODE
 
