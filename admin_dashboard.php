@@ -34,7 +34,6 @@
     <link rel="stylesheet" href="./src/assets/styles/dashboard.css" />
 </head>
 <body>
-    <?php include("./header.php"); ?> 
     <main class="dashboard__container">
         <section class="admin-section">
             <div class="admin-header">
