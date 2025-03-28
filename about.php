@@ -48,18 +48,17 @@
                             <p class="md-70">We believe that the best tech comes from diverse minds working together. From AI-powered platforms to immersive digital experiences, our projects are fueled by a shared passion for solving real-world problems with cutting-edge solutions.</p>
                             <a href="contact.php" class="orange"><button class="button-orange-outline ml-t">Apply Now</button></a>
                         </div>
-                    </div>
-
-                    
+                    </div>           
                 </div>
-                <div class="mxl-t lg-div">
+
+                <div class="mxl-t lg-div-rev">
                     <div>
                         <span class="small-header">(TESTIMONIAL)</span>
                         <h4 class="ms-t">“Working at CodeVanta has been the most creatively fulfilling experience — I get to innovate daily with people who truly care.”</h4>
                     </div>
-                    <div class="mm-t lg-nm">
+                    <div class="mm-t lg-nm md-nm">
                         <span class="small-header">(TESTIMONIAL)</span>
-                        <h4 class="ms-t">“Working at CodeVanta has been the most creatively fulfilling experience — I get to innovate daily with people who truly care.”</h4>
+                        <h4 class="ms-t">“CodeVanta’s culture empowers you to grow, lead, and make an actual impact. It's where ideas are heard and innovation is constant.”</h4>
                     </div>
                 </div>
                 
@@ -73,7 +72,7 @@
                     <div class="col-span-3 lg-flex">
                         <div>
                             <span class="small-header"> (Software Development) </span>
-                            <h3>Full-Stack Developer</h3>
+                            <span><h3>Full-Stack Developer</h3></span>
                         </div>
                         <div class="mxl-t">
                             <p>Craft responsive, scalable web applications using modern frameworks and cloud-based tools.</p>
@@ -91,7 +90,7 @@
                     <div class="col-span-3 lg-flex">
                         <div>
                             <span class="small-header"> (Mobile Development) </span>
-                            <h3>React Native Developer</h3>
+                            <span><h3>React Native Developer</h3></span>
                         </div>
                         <div class="mxl-t">
                             <p>Create sleek, performant mobile apps that run seamlessly across platforms.</p>
@@ -109,7 +108,7 @@
                     <div class="col-span-3 lg-flex">
                         <div>
                             <span class="small-header">(Artificial Intelligence)</span>
-                            <h3>AI/ML Engineer</h3>
+                            <span><h3>AI/ML Engineer</h3></span>
                         </div>
 
                         <div class="mxl-t">
@@ -128,7 +127,7 @@
                     <div class="col-span-3 lg-flex">
                         <div>
                             <span class="small-header">(UI/UX Designer)</span>
-                            <h3>Product & Design</h3>
+                            <span><h3>Product & Design</h3></span>
                         </div>
 
                         <div class="mxl-t">
@@ -143,12 +142,12 @@
             </section>
 
             <section class="about-last about-last-flex">
-                <div class="l-w-50 lg-flex">
-                    <h4 class="mxl-b">At CodeVanta, we’re not just creating digital products — we’re building a future where innovation is inclusive, impactful, and human-centered. <span>What sets us apart is our commitment to projects that spark real change</span> — from sustainable tech to accessible digital experiences.</h4>
-                    <p class="gray mxl-t">Our team thrives in a culture of collaboration, growth, and purpose, where every line of code contributes to something greater. Join us in shaping a smarter, more connected world — one breakthrough at a time.</p>
-                </div>
                 <div class="l-w-50">
                     <img src="src/assets/images/about/about-last.webp"class="image mm-t mm-b nr lg-nm">
+                </div>
+                <div class="l-w-50 lg-flex about-last-p">
+                    <h4 class="mxl-b md-70-a">At CodeVanta, we’re not just creating digital products — we’re building a future where innovation is inclusive, impactful, and human-centered. <span>What sets us apart is our commitment to projects that spark real change</span> — from sustainable tech to accessible digital experiences.</h4>
+                    <p class="gray mxl-t md-70-a">Our team thrives in a culture of collaboration, growth, and purpose, where every line of code contributes to something greater. Join us in shaping a smarter, more connected world — one breakthrough at a time.</p>
                 </div>
             </section>
         </div>

@@ -7,7 +7,7 @@
     $sort_order = isset($_GET['order']) ? $_GET['order'] : 'asc';
 
     $analytics_page = isset($_GET['analytics_page']) && is_numeric($_GET['analytics_page']) && $_GET['analytics_page'] > 0 ? (int)$_GET['analytics_page'] : 1;
-    $results_per_page = 5;
+    $results_per_page = 10;
     $start_from = ($analytics_page - 1) * $results_per_page;
 
 

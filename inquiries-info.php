@@ -2,7 +2,7 @@
     include './database.php';
 
     $inquiry_page = isset($_GET['inquiry_page']) && is_numeric($_GET['inquiry_page']) && $_GET['inquiry_page'] > 0 ? (int)$_GET['inquiry_page'] : 1;
-    $results_per_page = 3;
+    $results_per_page = 10;
     $start_from = ($inquiry_page - 1) * $results_per_page;
 
     $sql = "SELECT * FROM inquiries ORDER BY created_at DESC LIMIT $start_from, $results_per_page";
@@ -32,7 +32,7 @@
     
     <main>
         <section>
-            <h2>Audit Log Info</h2>
+            <h2>Inquiries Info</h2>
             <table border="1">
                 <tr>
                     <th>Name</th>

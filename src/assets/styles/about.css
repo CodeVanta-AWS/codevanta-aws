@@ -7,6 +7,28 @@
     grid-template-columns: repeat(4, 1fr);
 }
 
+.lg-block {
+    display: none;
+}
+
+.about-last-flex {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2rem;
+}
+
+@media (min-width: 640px){
+    .about-center {
+        display: flex;
+        justify-content: center;
+    }
+
+    .lg-div-rev {
+        display: flex;
+        gap: 3rem;
+    }
+}
+
 
 @media (min-width: 1024px){ 
 
@@ -22,9 +44,11 @@
     }
 
     .about-last-flex {
-        display: flex;
+        flex-direction: row;
         gap: 4rem;
     }
+
+
 
     .about-top {
         display: flex;

@@ -397,7 +397,7 @@ span {
   padding: 4rem 1rem;
 }
 
-.contact-container {
+.contact-container, .contact-footer-container {
   padding: 2rem 1rem;
 }
 
@@ -542,9 +542,7 @@ form textarea {
   color: white;
 }
 
-.w-80 {
-  width: 70%;
-}
+
 
 input:focus,
 textarea:focus {
@@ -585,7 +583,7 @@ textarea:focus {
     padding: 2rem;
   }
 
-  .about-section, .about-position, .about-last, .contact-about, .contact-container, .hero-contact, .career-container {
+  .about-section, .about-position, .about-last, .contact-about, .contact-container, .hero-contact, .career-container, .contact-footer-container {
     padding: 4rem 2rem;
   }
 
@@ -605,7 +603,7 @@ textarea:focus {
     width: 50%;
   }
 
-  .md-70 {
+  .md-70, .md-70-a {
     width: 70%;
   }
 
@@ -621,15 +619,16 @@ textarea:focus {
     display: block;
   }
 
-  .footer-top {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    justify-content: space-between;
+  .p-end {
+    text-align: end;
   }
 
   .footer-btm {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .back-top {
+    justify-content: end;
   }
 
   .logo-container {
@@ -656,7 +655,7 @@ textarea:focus {
     padding: 4rem;
   }
 
-  .about-section, .about-position, .about-last, .contact-about, .contact-container {
+  .about-section, .about-position, .about-last, .contact-about, .contact-container, .contact-footer-container {
     padding: 6rem 4rem;
   }
 
@@ -667,6 +666,17 @@ textarea:focus {
   
   .lg-nm {
       margin: 0;
+  }
+
+  .md-70-a {
+    width: 100%;
+  }
+
+  .footer-top {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
   }
 
 }

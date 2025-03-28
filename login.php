@@ -82,9 +82,9 @@ function get_location($ip) {
         <main>
             <section class="hero hero-login">
                 <div class="hero-contact-left">
-                    <h1 class="ms-b lg-80">Let’s Talk Tech, Ideas, and Possibilities</h1>
+                    <h1 class="ms-b lg-80">Innovators, Developers, and Dreamers</h1>
                     <hr class="w-50">
-                    <p class="ms-t md-50">Have a project in mind or a question to ask? Whether it’s about collaboration, careers, or custom solutions — we’re here to listen and help. Reach out to CodeVanta and let’s start building something impactful together.</p>
+                    <p class="ms-t md-50">Have an idea, project, or passion for tech? At CodeVanta, we’re here to support your journey — from inspiration to execution. Log in and let’s grow together.</p>
                 </div>
                 <div class="hero-login-right w-50 mxl-t">
                     <?php if (!empty($message)) echo "<p>$message</p>"; ?>
