@@ -328,6 +328,11 @@ header a {
   right: 0;
 }
 
+.close-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 
 
@@ -441,7 +446,6 @@ span {
   background: white;
 }
 
-
 .col-span-2 {
   grid-column: span 2;
 }
@@ -548,6 +552,30 @@ textarea:focus {
 }
 
 
+
+.logo-container {
+  display: none;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+}
+
+.logo-name {
+  font-weight: bolder;
+  color: var(--color-orange);
+}
+
+
+
+
+
+
+
+
+
 @media (min-width: 640px){
   h1 {
     /* line-height: 50px; */
@@ -604,6 +632,9 @@ textarea:focus {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .logo-container {
+    display: flex;
+  }
 
 
 }

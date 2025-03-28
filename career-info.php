@@ -156,9 +156,21 @@
         }
     }
 
-    $sql = "SELECT * FROM careers";
+    $career_page = isset($_GET['career_page']) && is_numeric($_GET['career_page']) && $_GET['career_page'] > 0 ? (int)$_GET['career_page'] : 1;
+    $results_per_page = 10;
+    $start_from = ($career_page - 1) * $results_per_page;
 
+    $sql = "SELECT * FROM careers LIMIT $start_from, $results_per_page";
     $result = $conn->query($sql);
+    if (!$result) {
+        die("Main query failed: " . $conn->error);
+    }
+
+    $total_query = "SELECT COUNT(*) AS total FROM careers";
+    $total_result = $conn->query($total_query);
+    $total_row = $total_result->fetch_assoc();
+    $total_pages = ceil($total_row["total"] / $results_per_page);
+
 
     
 ?>
@@ -171,6 +183,7 @@
     <title>Career Info — CodeVanta</title>
     <link rel="stylesheet" href="./src/assets/styles/global.css" />
     <link rel="stylesheet" href="./src/assets/styles/career-info.css" />
+    <link rel="stylesheet" href="./src/assets/styles/pagination.css" />
 </head>
 <body>
     <main>
@@ -205,6 +218,18 @@
             }
             ?>
         </table>
+
+        <?php if ($total_pages > 1): ?>
+            <div class="pagination">
+                <?php
+                    for ($i = 1; $i <= $total_pages; $i++) {
+                        $active = $i == $career_page ? "class='active'" : "";
+                        echo "<a href='admin_dashboard.php?page=career-info&career_page=$i' $active>$i</a> ";
+                    }
+                ?>
+            </div>
+        <?php endif; ?>
+
     </main>
 
     <div id="addModal" class="modal">

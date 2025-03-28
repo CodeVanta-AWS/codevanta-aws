@@ -1,0 +1,26 @@
+.analytics__container {
+    padding: 2rem;
+}
+
+.search-section {
+    display: flex;
+}
+
+.search-box {
+    display: flex;
+    gap: 1rem;
+    align-items: end;
+}
+
+.button-filter {
+  border: solid 2px var(--color-white);
+  padding: 0.5rem 2rem;
+  background: white;
+  color: var(--color-dark-gray);
+}
+
+.w-500 {
+    width: 500px;
+}
+
+

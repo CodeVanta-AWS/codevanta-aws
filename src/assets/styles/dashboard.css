@@ -20,6 +20,7 @@ table {
   color: white;
   border: 2px solid var(--color-orange);
   margin: 2rem 0;
+  table-layout: fixed;
 }
 
 th, td {

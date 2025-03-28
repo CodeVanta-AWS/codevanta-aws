@@ -1,8 +1,21 @@
 <?php
     include './database.php';
 
-    $sql = "SELECT * FROM inquiries";
+    $inquiry_page = isset($_GET['inquiry_page']) && is_numeric($_GET['inquiry_page']) && $_GET['inquiry_page'] > 0 ? (int)$_GET['inquiry_page'] : 1;
+    $results_per_page = 3;
+    $start_from = ($inquiry_page - 1) * $results_per_page;
+
+    $sql = "SELECT * FROM inquiries ORDER BY created_at DESC LIMIT $start_from, $results_per_page";
     $result = $conn->query($sql);
+    if (!$result) {
+        die("Query failed: " . $conn->error);
+    }
+
+    $total_query = "SELECT COUNT(*) AS total FROM inquiries";
+    $total_result = $conn->query($total_query);
+    $total_row = $total_result->fetch_assoc();
+    $total_pages = ceil($total_row["total"] / $results_per_page);
+
 ?> 
 
 <!DOCTYPE html>
@@ -12,6 +25,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inquiries — CodeVanta</title>
     <link rel="stylesheet" href="./src/assets/styles/global.css" />
+    <link rel="stylesheet" href="./src/assets/styles/pagination.css" />
+    
 </head>
 <body>
     
@@ -40,6 +55,18 @@
                     }
                 ?>
             </table>
+
+            <?php if ($total_pages > 1): ?>
+                <div class="pagination">
+                    <?php
+                        for ($i = 1; $i <= $total_pages; $i++) {
+                            $active = $i == $inquiry_page ? "class='active'" : "";
+                            echo "<a href='admin_dashboard.php?page=inquiries-info&inquiry_page=$i' $active>$i</a> ";
+                        }
+                    ?>
+                </div>
+            <?php endif; ?>
+
         </section>
     </main> 
 </body>

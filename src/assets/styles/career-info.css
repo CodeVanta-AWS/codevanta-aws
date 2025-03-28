@@ -7,5 +7,6 @@
     background: var(--color-dark-gray);
     padding: 2rem;
     width: 300px;
+    border: solid 1px var(--color-orange);
 }
 
