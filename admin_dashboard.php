@@ -1,17 +1,17 @@
 <?php
     // // FOR VPN VALIDATION
-    // function isValidAdminIP($ip, $allowedOctets) {
-    //     $firstOctet = explode('.', $ip)[0]; // Get the first octet of user's IP
-    //     return in_array($firstOctet, $allowedOctets);
-    // }
+    function isValidAdminIP($ip, $allowedOctets) {
+        $firstOctet = explode('.', $ip)[0]; // Get the first octet of user's IP
+        return in_array($firstOctet, $allowedOctets);
+    }
     
-    // $adminIP = $_SERVER['REMOTE_ADDR']; // Get the user's IP
-    // $allowedOctets = [51, 94];
+    $adminIP = $_SERVER['REMOTE_ADDR']; // Get the user's IP
+    $allowedOctets = [51, 94];
     
-    // if (isValidAdminIP($adminIP, $allowedOctets) == false) {
-    //     http_response_code(403);
-    //     die("Access denied: You must be connected to the VPN. Your IP: " . $adminIP);
-    // }
+    if (isValidAdminIP($adminIP, $allowedOctets) == false) {
+        http_response_code(403);
+        die("Access denied: You must be connected to the VPN. Your IP: " . $adminIP);
+    }
     // // END OF VPN VALIDATION CODE
 
     $page = isset($_GET['page']) ? $_GET['page'] : 'user-info';
