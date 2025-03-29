@@ -11,13 +11,12 @@
 
     <header>
         <div class="logo-container">      
-            <a href="#"><img class="logo" src="./src/assets/images/codevanta-logo.webp" alt="Codevanta Logo"></a>
+            <a href="about.php"><img class="logo" src="./src/assets/images/codevanta-logo.webp" alt="Codevanta Logo"></a>
             <p class="logo-name">CODEVANTA</p>
         </div>
         
         <nav class="nav1">
             <ul>
-                <li><a href="#">HOME</a></li>
                 <li><a href="about.php">ABOUT</a></li>
                 <li><a href="careers.php">CAREERS</a></li>
                 <li><a href="contact.php">CONTACT</a></li>
@@ -44,7 +43,6 @@
         </div>
         
             <ul>
-                <li><a href="#">HOME</a></li>
                 <li><a href="about.php">ABOUT</a></li>
                 <li><a href="careers.php">CAREERS</a></li>
                 <li><a href="contact.php">CONTACT</a></li>
