@@ -1,6 +1,5 @@
 <?php
     include 'auth_check.php'; 
-
     include './database.php';
 
     $sql = "SELECT * FROM careers";
