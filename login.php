@@ -33,11 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($role === "admin") {
                 header("Location: admin_dashboard.php");
+                exit();
             } 
             else {
                 header("Location: about.php");
+                exit();
             }
-            exit();
         } 
         else {
             $message = "<span>Invalid username or password!</span>";
